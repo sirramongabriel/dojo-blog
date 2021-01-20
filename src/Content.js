@@ -1,19 +1,29 @@
+import { useState } from 'react';
+
 const Content = () => {
+  const [name, setName] = useState('Tony Danza');
+  const [age, setAge] = useState(42);
+
   const welcome = 'Hello fellow dancers of disco!';
   const discoName = 'The dirty dancer'
   const dancerName = 'John Travolta'
   const dancer2Name = 'Tony Danza'
   const discoDj = 'The Bee Gees!'
   const handleClick = () => {
-    alert('You clicked me!')
+    setName('Fast Eddy McClintock');
+    setAge(57);
   };
-  const handleClickAgain = (x) => {
-    alert(`Hey there ${x}!`)
+  const handleClickAgain = (name) => {
+    alert(`Hey there ${name}!`)
   };
   return (  
     <div className="row">
       <div className="col-12">
         <h1>{ welcome }</h1>
+      </div>
+      <div className="col-12">
+        <p><b>Name:</b> { name }</p>
+        <p><b>Age:</b> { age }</p>
       </div>
       <div className="col-12">
         <p><b>Host &amp; Lead Dancer:</b> { dancerName }</p>
@@ -28,7 +38,7 @@ const Content = () => {
         <p>
           <button 
             onClick={() => {
-              handleClickAgain('tony dungee')
+              handleClickAgain('Johnny Bravo')
             }} 
             className="btn btn-block btn-secondary"
           >Say my name!</button>
